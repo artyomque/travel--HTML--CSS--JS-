@@ -1,0 +1,240 @@
+body {
+  background-color: #edeff6;
+  font-family: "Blogger Sans", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  color: #000;
+}
+
+.container {
+  max-width: 1320px;
+  padding: 0 60px;
+  margin: 0 auto;
+
+  @media (max-width: 1600px) {
+    max-width: 1270px;
+  }
+
+  @media (max-width: 770px) {
+    max-width: 770px;
+    padding: 0 45px;
+  }
+
+  @media (max-width: 500px) {
+    max-width: 500px;
+    padding: 0 35px;
+  }
+}
+
+@font-face {
+  font-family: "Blogger Sans";
+  src: url("./fonts/Blogger_Sans.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Blogger Sans";
+  src: url("./fonts/Blogger_Sans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Blogger Sans";
+  src: url("./fonts/Blogger_Sans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.section__grid {
+  grid-template-columns: 71% 29%;
+  column-gap: 92px;
+}
+
+/* Card */
+
+.card {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "photo main";
+  background: #f5ffff;
+  border-radius: 12px;
+  max-width: 940px;
+  max-height: 285px;
+}
+
+.card__photo {
+  grid-area: photo;
+}
+
+.card__main {
+  position: relative;
+  grid-area: main;
+  display: grid;
+  padding: 46px 108px 46px 60px;
+  grid-template-columns: 54% 46%;
+  column-gap: 74px;
+  grid-template-areas:
+    "name countries"
+    "tags countries"
+    "spacer spacer"
+    "interaction transport";
+  row-gap: 20px;
+}
+
+.card__name {
+  position: relative;
+  grid-area: name;
+  padding-left: 8px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.name__indicator {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: black;
+  top: 15px;
+  left: -18px;
+}
+
+.card__tags {
+  grid-area: tags;
+  padding-left: 8px;
+  font-size: 20px;
+}
+
+.card__spacer {
+  height: 34px;
+}
+
+.card__countries {
+  grid-area: countries;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.countries__item {
+  display: flex;
+  gap: 17px;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.card__interaction {
+  grid-area: interaction;
+  display: flex;
+  color: #161c35;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card__apply-btn {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  background-color: #ffd74b;
+  border-radius: 25px;
+}
+.card__like-btn {
+  background-color: #e2e5f2;
+  padding: 14px;
+  border-radius: 50%;
+}
+.card__like-count {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Transport */
+
+.card__transport {
+  grid-area: transport;
+  align-self: center;
+}
+
+.transport__list {
+  display: flex;
+  gap: 10px;
+}
+
+.transport__icon {
+}
+
+.transport__icon.is-disabled {
+  opacity: 0.15;
+}
+
+/* Level indicator */
+
+.card__level {
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+}
+
+.level__inner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 4px;
+  left: 17px;
+}
+
+.level__count {
+  font-weight: 700;
+  font-size: 24px;
+  color: #1d2e5b;
+}
+
+.level__text {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.circular-progress {
+  --size: 60px;
+  --half-size: calc(var(--size) / 2);
+  --stroke-width: 3px;
+  --radius: calc((var(--size) - var(--stroke-width)) / 2);
+  --circumference: calc(var(--radius) * pi * 2);
+  --dash: calc((var(--progress) * var(--circumference)) / 100);
+  animation: progress-animation 5s linear 0s 1 forwards;
+}
+.circular-progress circle {
+  cx: var(--half-size);
+  cy: var(--half-size);
+  r: var(--radius);
+  stroke-width: var(--stroke-width);
+  fill: none;
+  stroke-linecap: round;
+}
+.circular-progress circle.bg {
+  stroke: #ffffff;
+}
+.circular-progress circle.fg {
+  transform: rotate(-90deg);
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+  transition: stroke-dasharray 0.3s linear 0s;
+  stroke: #ff8d30;
+}
+
+@property --progress {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}

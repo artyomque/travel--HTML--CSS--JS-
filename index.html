@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Travel</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section__grid">
+        <div class="card__container">
+          <div class="card">
+            <div class="card__photo"><img src="./img/firsova-desktop 1.png" /></div>
+            <div class="card__main">
+              <h2 class="card__name">
+                <div class="name__indicator"></div>
+                Таня Фирсова
+              </h2>
+              <span class="card__tags">#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи</span>
+              <ul class="card__countries">
+                <li class="countries__item">
+                  <img class="countries__img" src="./img/flags/SriLanka.svg" /><span
+                    class="countries__name"
+                    >Шри-Ланка</span
+                  >
+                </li>
+                <li class="countries__item">
+                  <img class="countries__img" src="./img/flags/Thailand.svg" /><span
+                    class="countries__name"
+                    >Таиланд</span
+                  >
+                </li>
+                <li class="countries__item">
+                  <img class="countries__img" src="./img/flags/Seychelles.svg" /><span
+                    class="countries__name"
+                    >Сейшеллы</span
+                  >
+                </li>
+              </ul>
+              <div class="card__interaction">
+                <button class="card__apply-btn">Позвать!</button>
+                <button class="card__like-btn"><img src="./img/icons/icon_heart.svg" /></button>
+                <span class="card__like-count">1.5 M</span>
+              </div>
+              <div class="card__transport">
+                <ul class="transport__list">
+                  <li class="transport__item">
+                    <img class="transport__icon" src="./img/icons/transportation/icon_plane.svg" />
+                  </li>
+                  <li class="transport__item">
+                    <img class="transport__icon" src="./img/icons/transportation/icon_bus.svg" />
+                  </li>
+                  <li class="transport__item">
+                    <img
+                      class="transport__icon"
+                      src="./img/icons/transportation/icon_bicycle.svg"
+                    />
+                  </li>
+                  <li class="transport__item">
+                    <img class="transport__icon" src="./img/icons/transportation/icon_run.svg" />
+                  </li>
+                </ul>
+              </div>
+              <div class="card__level">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 60 60"
+                  style="--progress: 54"
+                  class="circular-progress"
+                >
+                  <circle class="bg"></circle>
+                  <circle class="fg"></circle>
+                  <div class="level__inner">
+                    <span class="level__count">54</span>
+                    <span class="level__text">level</span>
+                  </div>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./main.js"></script>
+</html>
