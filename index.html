@@ -5,91 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <title>Travel</title>
   </head>
   <body>
     <div class="container">
       <div class="section__grid">
-        <div class="card__container">
-          <div class="card">
-            <div class="card__photo"><img src="./img/firsova-desktop 1.png" /></div>
-            <div class="card__main">
-              <h2 class="card__name">
-                <div class="name__indicator"></div>
-                Таня Фирсова
-              </h2>
-              <span class="card__tags">#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи</span>
-              <ul class="card__countries">
-                <li class="countries__item">
-                  <img class="countries__img" src="./img/flags/SriLanka.svg" /><span
-                    class="countries__name"
-                    >Шри-Ланка</span
-                  >
-                </li>
-                <li class="countries__item">
-                  <img class="countries__img" src="./img/flags/Thailand.svg" /><span
-                    class="countries__name"
-                    >Таиланд</span
-                  >
-                </li>
-                <li class="countries__item">
-                  <img class="countries__img" src="./img/flags/Seychelles.svg" /><span
-                    class="countries__name"
-                    >Сейшеллы</span
-                  >
-                </li>
-              </ul>
-              <div class="card__interaction">
-                <button class="card__apply-btn">Позвать!</button>
-                <button class="card__like-btn"><img src="./img/icons/icon_heart.svg" /></button>
-                <span class="card__like-count">1.5 M</span>
-              </div>
-              <div class="card__transport">
-                <ul class="transport__list">
-                  <li class="transport__item">
-                    <img class="transport__icon" src="./img/icons/transportation/icon_plane.svg" />
-                  </li>
-                  <li class="transport__item">
-                    <img class="transport__icon" src="./img/icons/transportation/icon_bus.svg" />
-                  </li>
-                  <li class="transport__item">
-                    <img
-                      class="transport__icon"
-                      src="./img/icons/transportation/icon_bicycle.svg"
-                    />
-                  </li>
-                  <li class="transport__item">
-                    <img class="transport__icon" src="./img/icons/transportation/icon_run.svg" />
-                  </li>
-                </ul>
-              </div>
-              <div class="card__level">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 60 60"
-                  style="--progress: 54"
-                  class="circular-progress"
+        <div class="card__container"></div>
+        <div class="configurator">
+          <h2 class="configurator__title">Подберите идеального попутчика</h2>
+
+          <div class="configurator__inner">
+            <section class="configurator__section">
+              <button class="configurator__toggle" type="button">
+                <span class="section__title">Хобби</span><img class="configurator__chevron" src="./img/icons/chevron.svg" />
+              </button>
+              <div class="configurator__content">
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Спортзал</label
                 >
-                  <circle class="bg"></circle>
-                  <circle class="fg"></circle>
-                  <div class="level__inner">
-                    <span class="level__count">54</span>
-                    <span class="level__text">level</span>
-                  </div>
-                </svg>
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Кальян</label
+                >
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Диван</label
+                >
               </div>
-            </div>
+            </section>
+
+            <section class="configurator__section">
+              <button class="configurator__toggle" type="button">
+                <span class="section__title">Музыка</span><img class="configurator__chevron" src="./img/icons/chevron.svg" />
+              </button>
+              <div class="configurator__content">
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Тяжелый рок</label
+                >
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Русский рэп</label
+                >
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Евродэнс</label
+                >
+              </div>
+            </section>
+
+            <section class="configurator__section">
+              <button class="configurator__toggle" type="button">
+                <span class="section__title">Еда</span><img class="configurator__chevron" src="./img/icons/chevron.svg" />
+              </button>
+              <div class="configurator__content">
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Мясоед</label
+                >
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Сидит на ПП</label
+                >
+                <label class="checkbox"
+                  ><input type="checkbox" /> <span class="checkmark"></span>Веган-сыроед</label
+                >
+              </div>
+            </section>
+
+            <section class="configurator__section">
+              <button class="configurator__toggle" type="button">
+                <span class="section__title">Транспорт</span><img class="configurator__chevron" src="./img/icons/chevron.svg" />
+              </button>
+              <div class="configurator__content configurator__content--transport">
+                <label class="checkbox--transport"
+                  ><input type="checkbox" /></span><img class="configurator__icon" src="./img/icons/transportation/icon_plane.svg"></label
+                >
+                <label class="checkbox--transport"
+                  ><input type="checkbox" /></span><img class="configurator__icon" src="./img/icons/transportation/icon_bus.svg"></label
+                >
+                <label class="checkbox--transport"
+                  ><input type="checkbox" /></span><img class="configurator__icon" src="./img/icons/transportation/icon_bicycle.svg"></label
+                >
+                <label class="checkbox--transport"
+                ><input type="checkbox" /></span><img class="configurator__icon" src="./img/icons/transportation/icon_run.svg"></label
+              >
+              </div>
+            </section>
+
+            <section class="configurator__section configurator__section--open">
+              <button class="configurator__toggle" type="button">
+                <span class="section__title">Левел</span><img class="configurator__chevron" src="./img/icons/chevron.svg" />
+              </button>
+
+              <div class="configurator__content configurator__content--slider">
+              <div class="configurator__input">
+                <input id="min-input" type="number" value="30" min="0" max="100">
+                <div class="input__separator"></div>
+                <input id="max-input" type="number" value="100" min="0" max="100">
+              </div>
+
+              <div class="slider__container">
+                <div class="slider__track"></div>
+                <div class="slider__range" id="slider-range"></div>
+                <input type="range" id="min-slider" min="0" max="100" value="30">
+                <input type="range" id="max-slider" min="0" max="100" value="100">
+              </div>
+              </div>
+            </section>
+
+            <button class="configurator__apply-btn">Показать</button>
+
           </div>
         </div>
       </div>
