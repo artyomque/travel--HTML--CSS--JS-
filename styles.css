@@ -50,12 +50,21 @@ a {
   grid-template-columns: 71% 29%;
   column-gap: 92px;
   margin-bottom: 100px;
+  justify-items: center;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card__container {
   display: flex;
   flex-direction: column;
   gap: 33px;
+
+  @media (max-width: 1400px) {
+    order: 1;
+  }
 }
 
 /* Card */
@@ -141,6 +150,8 @@ a {
   text-transform: uppercase;
 }
 
+/* Interaction */
+
 .card__interaction {
   grid-area: interaction;
   display: flex;
@@ -165,6 +176,9 @@ a {
 }
 
 .card__like-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #e2e5f2;
   padding: 14px;
   border-radius: 50%;
@@ -173,9 +187,11 @@ a {
 
 .card__like-btn.liked {
   background-color: #f9eaea;
-  padding: 14px;
-  border-radius: 50%;
-  transition: background-color 0.2s ease-in;
+}
+
+.card__like-btn.liked .like__svg path {
+  fill: #f02323;
+  fill-rule: initial;
 }
 
 .card__like-btn:hover {
@@ -275,14 +291,24 @@ a {
   color: #1d2e5b;
   background-color: #ffd74b;
   padding: 46px 48px;
+  width: 100%;
   max-width: 286px;
   border-radius: 20px;
+
+  @media (max-width: 1400px) {
+    padding: 35px;
+    max-width: 752px;
+  }
 }
 
 .configurator__inner {
   display: flex;
   gap: 15px;
   flex-direction: column;
+
+  @media (max-width: 1400px) {
+    gap: 34px;
+  }
 }
 
 .configurator__title {
@@ -295,6 +321,11 @@ a {
 .configurator__section {
   font-size: 20px;
   line-height: 22px;
+
+  @media (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: 18% 1fr;
+  }
 }
 
 .section__title {
@@ -308,11 +339,21 @@ a {
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
+
+  @media (max-width: 1400px) {
+    width: auto;
+    margin-bottom: 0;
+  }
 }
 
 .configurator__content {
   display: none;
   overflow: hidden;
+
+  @media (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: 33% 33% 1fr;
+  }
 }
 
 .configurator__section.configurator__section--open .configurator__content {
@@ -329,8 +370,20 @@ a {
   margin-bottom: 18px;
 }
 
+.configurator__content--transport {
+  @media (max-width: 1400px) {
+    display: flex;
+  }
+}
+
 .configurator__section--open .configurator__chevron {
   transform: scaleY(-1);
+}
+
+.configurator__chevron {
+  @media (max-width: 1400px) {
+    display: none;
+  }
 }
 
 .checkbox--transport {

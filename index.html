@@ -86,23 +86,25 @@
               </div>
             </section>
 
-            <section class="configurator__section configurator__section--open">
+            <section class="configurator__section configurator__section--level">
               <button class="configurator__toggle" type="button">
                 <span class="section__title">Левел</span><img class="configurator__chevron" src="./img/icons/chevron.svg" />
               </button>
 
               <div class="configurator__content configurator__content--slider">
-              <div class="configurator__input">
+                <div class="slider__inner">
+                <div class="configurator__input">
                 <input id="min-input" type="number" value="30" min="0" max="100">
                 <div class="input__separator"></div>
                 <input id="max-input" type="number" value="100" min="0" max="100">
-              </div>
+                </div>
 
-              <div class="slider__container">
+                <div class="slider__container">
                 <div class="slider__track"></div>
                 <div class="slider__range" id="slider-range"></div>
                 <input type="range" id="min-slider" min="0" max="100" value="30">
                 <input type="range" id="max-slider" min="0" max="100" value="100">
+                </div>
               </div>
               </div>
             </section>
