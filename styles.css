@@ -472,7 +472,7 @@ a {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 7px;
+  top: 5px;
   left: 17px;
 
   @media (max-width: 750px) {
@@ -570,7 +570,7 @@ a {
   }
 
   @media (max-width: 750px) {
-    gap: 26px;
+    gap: 22px;
   }
 }
 
@@ -626,7 +626,7 @@ a {
   }
 
   @media (max-width: 750px) {
-    margin-bottom: 17px;
+    margin-bottom: 0;
   }
 }
 
@@ -647,8 +647,12 @@ a {
   margin-bottom: 18px;
 
   @media (max-width: 750px) {
-    margin-bottom: 0;
+    margin-bottom: 12px;
   }
+}
+
+.configurator__section.configurator__section--open .configurator__toggle {
+  margin-bottom: 20px;
 }
 
 .configurator__section.configurator__section--open .configurator__content--transport {
@@ -803,7 +807,7 @@ a {
 
   @media (max-width: 750px) {
     max-width: none;
-    padding: 10px 28px;
+    padding: 4px 28px;
   }
 }
 
@@ -858,6 +862,10 @@ a {
 
 .configurator__section.configurator__section--open .configurator__content--slider {
   gap: 42px;
+
+  @media (max-width: 750px) {
+    gap: 32px;
+  }
 }
 
 .slider__container {
@@ -866,6 +874,10 @@ a {
 
   @media (min-width: 751px) and (max-width: 1400px) {
     max-width: 280px;
+  }
+
+  @media (max-width: 750px) {
+    height: 10px;
   }
 }
 
