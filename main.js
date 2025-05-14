@@ -41,6 +41,19 @@ const users = [
   },
 ];
 
+const countryMap = {
+  "Шри-Ланка": "Srilanka",
+  Таиланд: "Thailand",
+  Сейшеллы: "Seychelles",
+  Бельгия: "Belgium",
+  Чехия: "Czech",
+  США: "USA",
+  Австралия: "Australia",
+  Доминика: "Dominica",
+  Великобритания: "UK",
+  Германия: "Germany",
+};
+
 const cardContainer = document.querySelector(".card__container");
 
 function formatLikes(count) {
@@ -78,7 +91,7 @@ function renderCard(user) {
         .map(
           (country) => `
         <li class="countries__item">
-          <img class="countries__img" src="./img/flags/${country.replace(/[\s-]/g, "")}.svg">
+          <img class="countries__img" src="./img/flags/${countryMap[country]}.svg">
           <span class="countries__name">${country}</span>
         </li>
       `
