@@ -476,8 +476,8 @@ a {
   left: 17px;
 
   @media (max-width: 750px) {
-    top: 5px;
-    left: 10px;
+    top: 9%;
+    left: 16%;
   }
 }
 
