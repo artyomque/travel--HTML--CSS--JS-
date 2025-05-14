@@ -54,20 +54,27 @@ a {
   @media (max-width: 1400px) {
     grid-template-columns: 1fr;
     row-gap: 40px;
+    margin-bottom: 60px;
   }
 
   @media (max-width: 750px) {
     row-gap: 24px;
+    margin-bottom: 40px;
   }
 }
 
 .card__container {
   display: flex;
   flex-direction: column;
-  gap: 33px;
+  gap: 32px;
 
   @media (max-width: 1400px) {
+    gap: 40px;
     order: 1;
+  }
+
+  @media (max-width: 750px) {
+    gap: 10px;
   }
 }
 
@@ -92,10 +99,32 @@ a {
     grid-template-columns: 190px 52%;
     grid-template-areas: "photo main";
   }
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    column-gap: 0;
+    row-gap: 0;
+    max-height: 416px;
+    max-width: 270px;
+    padding: 0;
+  }
 }
 
 .card__photo {
   grid-area: photo;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
+.card__photo--mobile {
+  grid-area: photo-mobile;
+
+  @media (min-width: 751px) {
+    display: none;
+  }
 }
 
 .card__img {
@@ -104,6 +133,14 @@ a {
     max-height: 190px;
     border-radius: 20px;
   }
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
+.card__img--mobile {
+  border-radius: 50%;
 }
 
 .card__main {
@@ -128,6 +165,19 @@ a {
       "tags transport"
       "interaction transport";
   }
+
+  @media (max-width: 750px) {
+    grid-template-columns: 70px 38.7% 1fr;
+    padding: 15px 18px;
+    column-gap: 16px;
+    row-gap: 14px;
+    grid-template-areas:
+      "photo-mobile name ."
+      "tags tags ."
+      "countries-mobile countries-mobile ."
+      "transport transport ."
+      "interaction interaction interaction";
+  }
 }
 
 .card__name {
@@ -137,9 +187,18 @@ a {
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
+  color: #161c35;
 
   @media (max-width: 1400px) {
     padding: 0;
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 20px;
   }
 }
 
@@ -156,6 +215,11 @@ a {
     top: 15px;
     left: 215px;
   }
+
+  @media (max-width: 750px) {
+    top: 12px;
+    left: 138px;
+  }
 }
 
 .name__indicator.online {
@@ -169,6 +233,10 @@ a {
 
   @media (max-width: 1400px) {
     padding: 0;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 15px;
   }
 }
 
@@ -190,10 +258,10 @@ a {
   }
 }
 
-.card__countries--mobile {
+.card__countries--tablet {
   display: none;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -201,13 +269,29 @@ a {
   }
 }
 
-.card__countries--mobile-list {
+.card__countries--tablet-list {
   display: flex;
   gap: 33px;
 }
 
-.card__countries--mobile-span {
+.card__countries--tablet-span {
   padding-left: 47px;
+}
+
+.card__countries--mobile {
+  grid-area: countries-mobile;
+  display: none;
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+.card__countries--mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .countries__item {
@@ -216,11 +300,21 @@ a {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
+  color: #161c35;
+
+  @media (max-width: 750px) {
+    font-size: 15px;
+  }
 }
 
 .countries__img {
   width: 35px;
   height: 24px;
+
+  @media (max-width: 750px) {
+    width: 26px;
+    height: 18px;
+  }
 }
 
 /* Interaction */
@@ -242,6 +336,12 @@ a {
   background-color: #ffd74b;
   border-radius: 25px;
   transition: background-color 0.2s ease-in;
+
+  @media (max-width: 750px) {
+    padding: 10px 32px;
+    font-size: 17px;
+    width: 100%;
+  }
 }
 
 .card__apply-btn:hover {
@@ -256,6 +356,20 @@ a {
   padding: 14px;
   border-radius: 50%;
   transition: background-color 0.2s ease-in;
+
+  @media (max-width: 750px) {
+    position: absolute;
+    padding: 8px;
+    top: 56px;
+    left: 68px;
+  }
+}
+
+.card__like-btn svg {
+  @media (max-width: 750px) {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 .card__like-btn.liked {
@@ -274,6 +388,16 @@ a {
 .card__like-count {
   font-size: 20px;
   font-weight: 700;
+  color: #161c35;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
+.card__like-count--mobile {
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* Transport */
@@ -285,14 +409,30 @@ a {
   @media (max-width: 1400px) {
     align-self: flex-start;
   }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .transport__list {
   display: flex;
   gap: 10px;
 
-  @media (max-width: 1400px) {
+  @media (min-width: 750px) and (max-width: 1400px) {
     flex-direction: column;
+  }
+}
+
+.transport__span,
+.level__span {
+  display: none;
+  font-size: 15px;
+  color: #444444;
+  @media (max-width: 750px) {
+    display: block;
   }
 }
 
@@ -311,14 +451,30 @@ a {
     bottom: -5px;
     right: -90px;
   }
+
+  @media (max-width: 750px) {
+    bottom: 42px;
+    right: 5px;
+  }
+}
+
+.level__span {
+  position: absolute;
+  top: -21px;
+  right: 16px;
 }
 
 .level__inner {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 4px;
+  top: 7px;
   left: 17px;
+
+  @media (max-width: 750px) {
+    top: 5px;
+    left: 10px;
+  }
 }
 
 .level__count {
@@ -331,6 +487,10 @@ a {
   font-size: 14px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 }
 
 .circular-progress {
@@ -341,6 +501,10 @@ a {
   --circumference: calc(var(--radius) * pi * 2);
   --dash: calc((var(--progress) * var(--circumference)) / 100);
   animation: progress-animation 5s linear 0s 1 forwards;
+
+  @media (max-width: 750px) {
+    --size: 45px;
+  }
 }
 .circular-progress circle {
   cx: var(--half-size);
@@ -421,7 +585,7 @@ a {
   font-size: 20px;
   line-height: 22px;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     display: grid;
     grid-template-columns: 18% 1fr;
   }
@@ -438,7 +602,7 @@ a {
 
 .title__colon {
   display: none;
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     display: initial;
   }
 }
@@ -450,7 +614,7 @@ a {
   width: 100%;
   margin-bottom: 20px;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     width: auto;
     margin-bottom: 0;
     pointer-events: none;
@@ -466,7 +630,7 @@ a {
   display: none;
   overflow: hidden;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     display: grid;
     grid-template-columns: 33% 33% 1fr;
   }
@@ -491,7 +655,7 @@ a {
 }
 
 .configurator__content--transport {
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     display: flex;
   }
 }
@@ -501,7 +665,7 @@ a {
 }
 
 .configurator__chevron {
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     display: none;
   }
 }
@@ -546,7 +710,7 @@ a {
 }
 
 .configurator__content label.checkbox {
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     pointer-events: none;
     cursor: default;
   }
@@ -624,7 +788,7 @@ a {
   border-radius: 8px;
   padding: 10px 20px;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     grid-column-start: 2;
     max-width: 148px;
   }
@@ -673,7 +837,7 @@ a {
 /* Input Slider */
 
 .configurator__content--slider {
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     display: grid;
     grid-template-columns: 66% 1fr;
   }
@@ -687,7 +851,7 @@ a {
   position: relative;
   height: 20px;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     max-width: 280px;
   }
 }
@@ -700,7 +864,7 @@ input[type="range"] {
   position: absolute;
   pointer-events: none;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     bottom: 35px;
   }
 }
@@ -734,7 +898,7 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 2px;
   background: #cbe0df;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     bottom: 35px;
   }
 }
@@ -745,7 +909,7 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 2px;
   background: #123456;
 
-  @media (min-width: 750px) and (max-width: 1400px) {
+  @media (min-width: 751px) and (max-width: 1400px) {
     bottom: 35px;
   }
 }
