@@ -398,6 +398,10 @@ a {
 .card__like-count--mobile {
   font-size: 14px;
   font-weight: 700;
+
+  @media (min-width: 750px) {
+    display: none;
+  }
 }
 
 /* Transport */
@@ -652,6 +656,10 @@ a {
   flex-direction: row;
   gap: 0;
   margin-bottom: 18px;
+
+  @media (max-width: 750px) {
+    margin-bottom: 0;
+  }
 }
 
 .configurator__content--transport {
@@ -791,6 +799,11 @@ a {
   @media (min-width: 751px) and (max-width: 1400px) {
     grid-column-start: 2;
     max-width: 148px;
+  }
+
+  @media (max-width: 750px) {
+    max-width: none;
+    padding: 10px 28px;
   }
 }
 
