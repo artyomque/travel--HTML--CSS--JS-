@@ -106,7 +106,7 @@ function renderCard(user) {
       .map(
         (country) => `
       <li class="countries__item">
-        <img class="countries__img" src="./img/flags/${country.replace(/[\s-]/g, "")}.svg">
+        <img class="countries__img" src="./img/flags/${countryMap[country]}.svg">
         <span class="countries__name">${country}</span>
       </li>
     `
@@ -175,7 +175,7 @@ function renderCard(user) {
       .map(
         (country) => `
       <li class="countries__item">
-        <img class="countries__img" src="./img/flags/${country.replace(/[\s-]/g, "")}.svg">
+        <img class="countries__img" src="./img/flags/${countryMap[country]}.svg">
         <span class="countries__name">${country}</span>
       </li>
     `
