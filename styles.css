@@ -54,6 +54,7 @@ a {
 
   @media (max-width: 1400px) {
     grid-template-columns: 1fr;
+    row-gap: 40px;
   }
 }
 
@@ -78,10 +79,28 @@ a {
   border-radius: 12px;
   max-width: 940px;
   max-height: 285px;
+
+  @media (max-width: 1400px) {
+    max-height: 332px;
+    max-width: 688px;
+    padding: 33px 41px 26px 35px;
+    column-gap: 33px;
+    row-gap: 22px;
+    grid-template-columns: 190px 52%;
+    grid-template-areas: "photo main";
+  }
 }
 
 .card__photo {
   grid-area: photo;
+}
+
+.card__img {
+  @media (max-width: 1400px) {
+    max-width: 190px;
+    max-height: 190px;
+    border-radius: 20px;
+  }
 }
 
 .card__main {
@@ -97,6 +116,15 @@ a {
     "spacer spacer"
     "interaction transport";
   row-gap: 20px;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: 92% 8%;
+    padding: 0;
+    grid-template-areas:
+      "name transport"
+      "tags transport"
+      "interaction transport";
+  }
 }
 
 .card__name {
@@ -106,6 +134,10 @@ a {
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
+
+  @media (max-width: 1400px) {
+    padding: 0;
+  }
 }
 
 .name__indicator {
@@ -116,6 +148,11 @@ a {
   background-color: #f97676;
   top: 15px;
   left: -18px;
+
+  @media (max-width: 1400px) {
+    top: 15px;
+    left: 215px;
+  }
 }
 
 .name__indicator.online {
@@ -126,6 +163,10 @@ a {
   grid-area: tags;
   padding-left: 8px;
   font-size: 20px;
+
+  @media (max-width: 1400px) {
+    padding: 0;
+  }
 }
 
 .card__spacer {
@@ -134,12 +175,36 @@ a {
 
 /* Countries */
 
-.card__countries {
+.card__countries--desktop {
   grid-area: countries;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 12px;
+
+  @media (max-width: 1400px) {
+    display: none;
+  }
+}
+
+.card__countries--mobile {
+  display: none;
+
+  @media (min-width: 750px) and (max-width: 1400px) {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    grid-column: 1 / 3;
+  }
+}
+
+.card__countries--mobile-list {
+  display: flex;
+  gap: 33px;
+}
+
+.card__countries--mobile-span {
+  padding-left: 47px;
 }
 
 .countries__item {
@@ -148,6 +213,11 @@ a {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
+}
+
+.countries__img {
+  width: 35px;
+  height: 24px;
 }
 
 /* Interaction */
@@ -208,11 +278,19 @@ a {
 .card__transport {
   grid-area: transport;
   align-self: center;
+
+  @media (max-width: 1400px) {
+    align-self: flex-start;
+  }
 }
 
 .transport__list {
   display: flex;
   gap: 10px;
+
+  @media (max-width: 1400px) {
+    flex-direction: column;
+  }
 }
 
 .transport__item.is-disabled {
@@ -225,6 +303,11 @@ a {
   position: absolute;
   bottom: 35px;
   right: 25px;
+
+  @media (max-width: 1400px) {
+    bottom: -5px;
+    right: -90px;
+  }
 }
 
 .level__inner {
@@ -297,7 +380,7 @@ a {
 
   @media (max-width: 1400px) {
     padding: 35px;
-    max-width: 752px;
+    max-width: 688px;
   }
 }
 
@@ -333,6 +416,13 @@ a {
   text-transform: uppercase;
 }
 
+.title__colon {
+  display: none;
+  @media (min-width: 750px) and (max-width: 1400px) {
+    display: initial;
+  }
+}
+
 .configurator__toggle {
   display: flex;
   justify-content: space-between;
@@ -343,6 +433,8 @@ a {
   @media (max-width: 1400px) {
     width: auto;
     margin-bottom: 0;
+    pointer-events: none;
+    cursor: default;
   }
 }
 
@@ -425,6 +517,11 @@ a {
   background-color: #b3c7ff;
 }
 
+.configurator__content label.checkbox {
+  pointer-events: none;
+  cursor: default;
+}
+
 /* Custom Checkbox */
 
 .checkbox {
@@ -496,6 +593,11 @@ a {
   border: 1px solid #cbced9;
   border-radius: 8px;
   padding: 10px 20px;
+
+  @media (max-width: 1400px) {
+    grid-column-start: 2;
+    max-width: 148px;
+  }
 }
 
 .configurator__input input {
@@ -505,10 +607,6 @@ a {
   font-weight: 500;
   color: #123456;
   text-align: center;
-}
-
-.configurator__input input:focus {
-  outline: none;
 }
 
 .configurator__input input::-webkit-outer-spin-button,
@@ -544,6 +642,13 @@ a {
 
 /* Input Slider */
 
+.configurator__content--slider {
+  @media (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: 66% 1fr;
+  }
+}
+
 .configurator__section.configurator__section--open .configurator__content--slider {
   gap: 42px;
 }
@@ -551,6 +656,10 @@ a {
 .slider__container {
   position: relative;
   height: 20px;
+
+  @media (max-width: 1400px) {
+    max-width: 280px;
+  }
 }
 
 input[type="range"] {
@@ -560,6 +669,10 @@ input[type="range"] {
   background: transparent;
   position: absolute;
   pointer-events: none;
+
+  @media (max-width: 1400px) {
+    bottom: 35px;
+  }
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -590,6 +703,10 @@ input[type="range"]::-moz-range-thumb {
   opacity: 0.5;
   border-radius: 2px;
   background: #cbe0df;
+
+  @media (max-width: 1400px) {
+    bottom: 35px;
+  }
 }
 
 .slider__range {
@@ -597,4 +714,8 @@ input[type="range"]::-moz-range-thumb {
   height: 4px;
   border-radius: 2px;
   background: #123456;
+
+  @media (max-width: 1400px) {
+    bottom: 35px;
+  }
 }

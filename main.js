@@ -52,30 +52,35 @@ function renderCard(user) {
   card.classList.add("card");
 
   card.innerHTML = `
-        <div class="card__photo"><img src="${user.imgsrc}" alt="${user.name}"></div>
-        <div class="card__main">
-            <h2 class="card__name">
-                <div class="name__indicator ${user.isOnline ? "online" : ""}"></div>
-                ${user.name}
-            </h2>
-            <span class="card__tags">${user.tags.map((tag) => `#${tag}`).join(" ")}</span>
-            <ul class="card__countries">
-                ${user.countries
-                  .map(
-                    (country) => `
-                    <li class="countries__item">
-                        <img class="countries__img" src="./img/flags/${country.replace(
-                          /[\s-]/g,
-                          ""
-                        )}.svg">
-                        <span class="countries__name">${country}</span>
-                    </li>
-                `
-                  )
-                  .join("")}
-            </ul>
-            <div class="card__interaction">
-                <button class="card__apply-btn">Позвать!</button>
+  <div class="card__photo">
+    <img class="card__img" src="${user.imgsrc}" alt="${user.name}">
+  </div>
+  
+  <div class="card__main">
+    <h2 class="card__name">
+      <div class="name__indicator ${user.isOnline ? "online" : ""}"></div>
+      ${user.name}
+    </h2>
+
+    <span class="card__tags">
+      ${user.tags.map((tag) => `#${tag}`).join(" ")}
+    </span>
+
+    <ul class="card__countries--desktop">
+      ${user.countries
+        .map(
+          (country) => `
+        <li class="countries__item">
+          <img class="countries__img" src="./img/flags/${country.replace(/[\s-]/g, "")}.svg">
+          <span class="countries__name">${country}</span>
+        </li>
+      `
+        )
+        .join("")}
+    </ul>
+
+    <div class="card__interaction">
+      <button class="card__apply-btn">Позвать!</button>
                 <button class="card__like-btn"><svg width="21" class="like__svg" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_3_1064)">
                                                 <g opacity="0.5">
@@ -89,42 +94,58 @@ function renderCard(user) {
                                                 </defs>
                                                 </svg>
                 </button>
-                <span class="card__like-count">${formatLikes(user.likesCount)}</span>
-            </div>
-            <div class="card__transport">
-                <ul class="transport__list">
-                    ${Object.entries({
-                      plane: "./img/icons/transportation/icon_plane.svg",
-                      bus: "./img/icons/transportation/icon_bus.svg",
-                      bicycle: "./img/icons/transportation/icon_bicycle.svg",
-                      walking: "./img/icons/transportation/icon_run.svg",
-                    })
-                      .map(
-                        ([type, src]) => `
-                        <li class="transport__item ${
-                          user.availableTransport[type] ? "" : "is-disabled"
-                        }">
-                            <img class="transport__icon" src="${src}" alt="${type}">
-                        </li>
-                    `
-                      )
-                      .join("")}
-                </ul>
-            </div>
-            <div class="card__level">
-                <svg width="60" height="60" viewBox="0 0 60 60" style="--progress: ${
-                  user.level
-                }" class="circular-progress">
-                    <circle class="bg"></circle>
-                    <circle class="fg"></circle>
-                </svg>
-                <div class="level__inner">
-                    <span class="level__count">${user.level}</span>
-                    <span class="level__text">level</span>
-                </div>
-            </div>
-        </div>
-    `;
+      <span class="card__like-count">${formatLikes(user.likesCount)}</span>
+    </div>
+
+    <div class="card__transport">
+      <ul class="transport__list">
+        ${Object.entries({
+          plane: "./img/icons/transportation/icon_plane.svg",
+          bus: "./img/icons/transportation/icon_bus.svg",
+          bicycle: "./img/icons/transportation/icon_bicycle.svg",
+          walking: "./img/icons/transportation/icon_run.svg",
+        })
+          .map(
+            ([type, src]) => `
+          <li class="transport__item ${user.availableTransport[type] ? "" : "is-disabled"}">
+            <img class="transport__icon" src="${src}" alt="${type}">
+          </li>
+        `
+          )
+          .join("")}
+      </ul>
+    </div>
+
+    <div class="card__level">
+      <svg width="60" height="60" viewBox="0 0 60 60" style="--progress: ${
+        user.level
+      }" class="circular-progress">
+        <circle class="bg"></circle>
+        <circle class="fg"></circle>
+      </svg>
+      <div class="level__inner">
+        <span class="level__count">${user.level}</span>
+        <span class="level__text">level</span>
+      </div>
+    </div>
+  </div>
+  <div class="card__countries--mobile">
+    <span class="card__countries--mobile-span">хочет посетить:</span>
+    <ul class="card__countries--mobile-list">
+    ${user.countries
+      .map(
+        (country) => `
+      <li class="countries__item">
+        <img class="countries__img" src="./img/flags/${country.replace(/[\s-]/g, "")}.svg">
+        <span class="countries__name">${country}</span>
+      </li>
+    `
+      )
+      .join("")}
+  </ul>
+  </div>
+
+`;
 
   return card;
 }
